@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [users, setUsers] = useState(null);
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
+    axios.get("https://jsonplaceholder.typicode.com/photos").then((response) => {
       setUsers(response.data);
       console.log(response.data);
     });
@@ -15,13 +15,8 @@ export default function Home() {
         return (
           <div key={index}>
             <br/>
-            <p>{data.name}</p>
-            <p>{data.username}</p>
-            <p>{data.email}</p>
-            <p>{data.address.street}</p>
-            <p>{data.address.suite}</p>
-            <p>{data.address.city}</p>
-            <p>{data.address.zipcode}</p>
+            <p>{data.title}</p>
+            {/* <img src={data.thumbnailUrl} alt="url" /> */}
           </div>
         );
       })}
