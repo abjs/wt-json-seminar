@@ -4,19 +4,19 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [users, setUsers] = useState(null);
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/photos").then((response) => {
+    axios.get("https://jsonplaceholder.typicode.com/todos").then((response) => {
       setUsers(response.data);
       console.log(response.data);
     });
   }, []);
   return (
     <div className="main">
-      {users.map((data, index) => {
+      {users?.map((data, index) => {
         return (
           <div key={index}>
-            <br/>
+            <br />
             <p>{data.title}</p>
-            {/* <img src={data.thumbnailUrl} alt="url" /> */}
+            <p>{data.completed ? 'Completed' : "Not Completed"}</p> 
           </div>
         );
       })}
