@@ -1,13 +1,30 @@
-import data from "../data.json";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 export default function Home() {
+  const [users, setUsers] = useState(null);
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
+      setUsers(response.data);
+      console.log(response.data);
+    });
+  }, []);
   return (
     <div className="main">
-      <h1>{data.Name}</h1>
-      <p>{data.Address.District}</p>
-      <p>{data.Address.House}</p>
-      <p>{data.Address.code}</p>
-      <br />
-      {data.Technology.map((techs,index) =><p key={index}>{techs}</p>)}
+      {users.map((data, index) => {
+        return (
+          <div key={index}>
+            <br/>
+            <p>{data.name}</p>
+            <p>{data.username}</p>
+            <p>{data.email}</p>
+            <p>{data.address.street}</p>
+            <p>{data.address.suite}</p>
+            <p>{data.address.city}</p>
+            <p>{data.address.zipcode}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
