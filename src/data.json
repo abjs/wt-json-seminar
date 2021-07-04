@@ -1,0 +1,20 @@
+{
+    "Name": "Abin Joseph",
+    "age": 21,
+    "Address": {
+        "House": "Kalathilparambil (H)",
+        "District": "idukki",
+        "place": "Josegiri",
+        "code": 685565
+    },
+    "Technology": [
+        "ReactJS",
+        "NextJS",
+        "Angulaer12",
+        "Firebase",
+        "NodeJS",
+        "ExpressJS",
+        "serverless"
+    ],
+    "Data": null
+}
