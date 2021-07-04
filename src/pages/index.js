@@ -1,6 +1,5 @@
 import data from "../data.json";
 export default function Home() {
-  console.log(data);
   return (
     <div className="main">
       <h1>{data.Name}</h1>
@@ -8,7 +7,7 @@ export default function Home() {
       <p>{data.Address.House}</p>
       <p>{data.Address.code}</p>
       <br />
-      {data.Technology.map((techs) =><p>{techs}</p>)}
+      {data.Technology.map((techs,index) =><p key={index}>{techs}</p>)}
     </div>
   );
 }
