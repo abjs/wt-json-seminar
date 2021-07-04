@@ -1,5 +1,24 @@
-import data from '../data.json'
 export default function Home() {
+  const data = {
+    Name: "Abin Joseph",
+    age: 21,
+    Address: {
+      House: "Kalathilparambil (H)",
+      District: "idukki",
+      place: "Josegiri",
+      code: 685565,
+    },
+    Technology: [
+      "ReactJS",
+      "NextJS",
+      "Angular12",
+      "Firebase",
+      "NodeJS",
+      "ExpressJS",
+      "serverless",
+    ],
+    Data: null,
+  };
   console.log(data);
   return (
     <div className="main">
@@ -7,7 +26,7 @@ export default function Home() {
       <p>{data.Address.District}</p>
       <p>{data.Address.House}</p>
       <p>{data.Address.code}</p>
-      <br/>
+      <br />
       <p>{data.Technology[0]}</p>
       <p>{data.Technology[1]}</p>
       <p>{data.Technology[2]}</p>
